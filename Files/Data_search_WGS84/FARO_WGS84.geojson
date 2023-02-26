@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "FARO_WGS84",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -7.972423970342845, 37.088398323624347 ], [ -7.889190424358901, 37.083258687851753 ], [ -7.890760868622806, 37.042569904651941 ], [ -7.971281829060047, 37.043712045934797 ], [ -7.972423970342845, 37.088398323624347 ] ] ] ] } }
+]
+}
