@@ -109,16 +109,13 @@
 
 
 <script>
-  
+  // to zoom the level
   var mymap = L.map('mapid').setView([38.754083, -9.18457], 6);
-
+// Base maps
   var googleLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
 		  });
-
-
-
   var googleLayer_1 = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
       subdomains:['mt0','mt1','mt2','mt3'],
       maxZoom: 20,
@@ -172,12 +169,9 @@
 			drawnItems.addLayer(layer);
 		});
 		
-		
+// scale button		
     L.control.scale().addTo(mymap);
-
-   
-
-
+// to show the footprints of the images from the database
   var geojsonLayer = L.geoJSON({{ footprint_geojson|tojson | safe }}, {
         onEachFeature: function(feature, layer) {
           layer.on('click', function() {
@@ -194,14 +188,10 @@
       mymap.fitBounds(geojsonLayer.getBounds());
 
    
-    // Update the map size whenever the window is resized
+  // Update the map size whenever the window is resized
     window.addEventListener('resize', function() {
     mymap.invalidateSize();
-    }).addTo(mymap);
-
-
-
-    
+    }).addTo(mymap);    
 </script>
 
 </body>
