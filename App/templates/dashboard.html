@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPS_App</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" integrity="sha384-BfzU6lKjYwZbcJcMz+afGp6bpxF78KX9ajbL+vk/mPyxLYI+o/JmPV5vZ2QK5cSA" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1.3.4/leaflet.css" />
+	
+  <style>
+     .mbutton{
+        position: absolute;
+        z-index: 100;
+    }
+        .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .btn-primary:focus, .btn-primary.focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    }
+
+    .btn-primary.disabled, .btn-primary:disabled {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: #ffffff;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-primary.dropdown-toggle {
+      background-color: #0062cc;
+      border-color: #005cbf;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-primary.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    }
+    #mapid {
+      position: absolute;
+      top: 50px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 93%;
+    }
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fbfbfb;
+      padding: 3px;
+    }
+
+    #header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    #header h2 {
+      margin: 0;
+      font-size: 12px;
+      font-weight: bold;
+      align-items: left;
+    }
+    
+    #header img {
+      height: 40px;
+      margin-left: 20px;
+      align-items: center;
+    }
+  </style>
+
+</head>
+<body>
+        <div id="header">
+          <h1>Crop Health Monitoring</h1>
+          <h2>Group Project Seminar on Programming and Analysis</h2>
+          <img src="data:image/png;base64,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" alt="Erasmus Mundus logo">
+          <button onclick="window.location.href='/metadata'" type="button" class="btn btn-primary" >Show Metadata</button>
+
+        </div>     
+<div id="mapid">
+  
+</div>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geometryutil/0.9.3/leaflet.geometryutil.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/leaflet/1.3.4/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js" integrity="sha384-BfzU6lKjYwZbcJcMz+afGp6bpxF78KX9ajbL+vk/mPyxLYI+o/JmPV5vZ2QK5cSA" crossorigin="anonymous"></script>
+
+
+
+<script>
+  
+  var mymap = L.map('mapid').setView([38.754083, -9.18457], 6);
+
+  var googleLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+		  });
+
+
+
+  var googleLayer_1 = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+      subdomains:['mt0','mt1','mt2','mt3'],
+      maxZoom: 20,
+      attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>'
+    });
+
+  var baseMaps = {
+      "Google Map": googleLayer,
+      "Google Map Satellite": googleLayer_1
+    };
+    googleLayer.addTo(mymap);  // set one of the layers as the default
+    L.control.layers(baseMaps).addTo(mymap);
+
+
+// Draw Button
+	var drawnItems = new L.FeatureGroup();
+		mymap.addLayer(drawnItems);
+
+	var drawControl = new L.Control.Draw({
+			draw: {
+				polygon: {
+					allowIntersection: false,
+					drawError: {
+						color: '#e1e100',
+						message: '<strong>Error:</strong> shape edges cannot cross!'
+					},
+					shapeOptions: {
+						color: '#97009c'
+					}
+				},
+				circle: {
+					shapeOptions: {
+						color: '#662d91'
+					}
+				},
+				// disable other shape options
+				polyline: true,
+				marker: true,
+				rectangle: true,
+				circlemarker: true
+			},
+			edit: {
+				featureGroup: drawnItems
+			}
+		});
+		mymap.addControl(drawControl);
+
+		mymap.on(L.Draw.Event.CREATED, function (event) {
+			var layer = event.layer;
+
+			drawnItems.addLayer(layer);
+		});
+		
+		
+    L.control.scale().addTo(mymap);
+
+   
+
+
+  var geojsonLayer = L.geoJSON({{ footprint_geojson|tojson | safe }}, {
+        onEachFeature: function(feature, layer) {
+          layer.on('click', function() {
+            var properties = feature.properties;
+            var popupContent = '<table>';
+            for (var key in properties) {
+              popupContent += '<tr><th>' + key + '</th><td>' + properties[key] + '</td></tr>';
+            }
+            popupContent += '</table>';
+            layer.bindPopup(popupContent).openPopup();
+          });
+        }
+    }).addTo(mymap);
+      mymap.fitBounds(geojsonLayer.getBounds());
+
+   
+    // Update the map size whenever the window is resized
+    window.addEventListener('resize', function() {
+    mymap.invalidateSize();
+    }).addTo(mymap);
+
+
+
+    
+</script>
+
+</body>
+</html>

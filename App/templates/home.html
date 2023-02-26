@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>GPS_App</title>
+        <style>
+            table {
+                display: none;
+            }
+            table.active {
+            display: block;
+            background-color: #b1ddb6;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 10px;
+            }
+
+            table.active td {
+            padding: 10px;
+            }
+
+            table.active th,
+            table.active td {
+            border: 2px solid #000000;
+            }
+
+            table.active thead th {
+            font-size: 14px; /* increase font size for all header cells in the first row */
+            font-weight: bold;
+            text-align: center;
+            }
+
+            table.active tbody th {
+            font-weight: bold;
+            text-align: center;
+            }
+
+            table.active tbody tr {
+            height: 30px;
+            }
+            
+            body {
+            background-image: url('https://medias.ptagtiv.com/media/3057/blog_crop_rotation_vignette.jpg?anchor=center&mode=crop&width=1200&quality=60&rnd=132430103780000000');
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+        </style>
+        <!-- scope="col"-->
+    </head>
+    <body>
+        <div class="p-4 button-row d-flex justify-content-between align-items-center">
+            <div>
+                <button id="toggle-btn" class="btn btn-primary me-3">Show Metadata of the images</button>
+                <button onclick="window.location.href='/quicklook_url'" type="button" class="btn btn-primary">Quicklook_url</button>
+            </div>
+            <form class="d-flex align-items-center" action="{{ url_for('search') }}" method="GET">
+                <label class="me-2" for="start-date" style="font-weight: bold;">Starting Date:</label>
+                <input type="date" class="form-control me-3" id="start-date" name="start_date">
+                <label class="me-2" for="end-date" style="font-weight: bold;">Ending Date:</label>
+                <input type="date" class="form-control me-3" id="end-date" name="end_date">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+            
+          
+            <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Cloud Percentage</th>
+                <th>Identifier</th>
+                <th>Processing Level</th>
+                <th>Product Type</th>
+                <th>Size</th>
+                <th>Illumination Azimuth Angle</th>
+                <th>Illumination Zenith Angle</th>
+                
+            </tr>
+        </thead> 
+        
+        <tbody>
+        {% for row in rows %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+                <td>{{row[9]}}</td>
+                <td>{{row[10]}}</td>
+                
+            </tr>
+        {%endfor%}
+        </tbody> 
+        </table>
+            
+
+
+        </div>
+    </body>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+        const toggleBtn = document.querySelector("#toggle-btn");
+
+        const tableEl = document.querySelector(".table");
+
+        toggleBtn.addEventListener('mouseover', () => {
+            tableEl.classList.toggle('active');
+        })
+    </script>
+    </html>

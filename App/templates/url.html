@@ -1,1 +1,63 @@
-
+<html>
+    <head>
+        <title>GPS_App</title>
+       <style>
+            div.table-container {
+              background-color: #b1ddb6;
+              padding: 2px; /* add padding to limit background to border */
+            }
+            table.active {
+              display: block;
+              border-collapse: collapse;
+              width: 100%;
+              font-size: 16px;
+              margin: 0 auto; /* center the table horizontally */
+              border: 2px solid #000000;
+            }
+            table.active td {
+              padding: 10px;
+              text-align: center;
+              border: 2px solid #000000;
+            }
+            table.active th {
+              border: 2px solid #000000;
+              font-size: 20px;
+              font-weight: bold;
+              text-align: center;
+              padding: 10px;
+            }
+            table.active tbody th {
+              font-weight: bold;
+              text-align: center;
+            }
+            table.active tbody tr {
+              height: 30px;
+            }
+            body {
+              background-image: url('https://medias.ptagtiv.com/media/3057/blog_crop_rotation_vignette.jpg?anchor=center&mode=crop&width=1200&quality=60&rnd=132430103780000000');
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="table-container">
+            <table class="active">
+                <thead>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Quicklook URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(rows|length) %}
+                        <tr>
+                            <td>{{ i+1 }}</td>
+                            <td><a href="{{ rows[i][0] }}">{{ rows[i][0] }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
