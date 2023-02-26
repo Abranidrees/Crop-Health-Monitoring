@@ -19,7 +19,7 @@ date_range = ('20220901','20221130')
 # cloud coverage 
 cloudcoverpercentage=(0, 10)
 # Copernicous api
-api = SentinelAPI('abranidrees', '!@#$%^&*()', 'https://apihub.copernicus.eu/apihub', show_progressbars=True)
+api = SentinelAPI('username', 'password', 'https://apihub.copernicus.eu/apihub', show_progressbars=True)
 
 # Directories paths
 folder_path = "c:\Data"
