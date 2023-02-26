@@ -1,1 +1,8 @@
-
+{
+"type": "FeatureCollection",
+"name": "MADRID_WGS84",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -3.925939224888302, 40.35882082977993 ], [ -3.274948702917027, 40.378508043145992 ], [ -3.260511413115245, 39.966389043349665 ], [ -3.920689301324017, 39.95851415800324 ], [ -3.925939224888302, 40.35882082977993 ] ] ] ] } }
+]
+}
