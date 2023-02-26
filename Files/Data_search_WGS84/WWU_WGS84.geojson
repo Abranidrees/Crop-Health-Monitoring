@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "WWU_WGS84",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 7.562620471626133, 51.983962012282689 ], [ 7.649113879188008, 51.982772281779773 ], [ 7.657441992708414, 51.936848684367305 ], [ 7.568093231939486, 51.935183061663167 ], [ 7.562620471626133, 51.983962012282689 ] ] ] ] } }
-]
-}
