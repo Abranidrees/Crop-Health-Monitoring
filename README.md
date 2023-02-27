@@ -17,6 +17,8 @@ This project used sentinel-2 satellite images and boundaries of a few selected s
 The backend was developed using python. The downloading and processing of images are carried out by functions in the main file. The “app.py” file is the flask application created to extract data from the database. The front end, which enables the visualization of the results was developed using HTML and JavaScript. The web map interface incorporates Leaflet, which is an open-source JavaScript library.
 
 ## How to run the APP
+First thing is to create the environment in your computer for that you have to install conda, pgAdmin, and VS code. After installaltion you have to run the line of code in Anaconda prompt.
+
 The libraries/packages required to run the app are contained in “requirements.txt”.  
 
 1.	Clone the repository to your computer
