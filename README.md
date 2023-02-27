@@ -31,7 +31,7 @@ The libraries/packages required to run the app are contained in “requirements.
 ## Output and visualization
 
 The downloaded and processed images are stored on the local Disk and can be visualized using any suitable software application. The image metadata are contained in the PostgreSQL dB. The image metadata and the study area extent can be visualized using the web map interface developed using the Leaflet. The web map interface functionalities include an attribute pop-up when clicking on the study area polygon, a button to display attributes/metadata, and a quick URL to view the sentinel images. 
-Future updates:
+## Future updates:
 1.	Centralized database system.
 2.	Multi-temporal vegetation indices analysis and comparison.
 3.	Web visualization of multi-temporal indices line plot. 
