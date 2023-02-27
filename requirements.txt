@@ -1,0 +1,10 @@
+ipykernel
+sentinelsat
+pandas
+geopandas
+rasterio
+psycopg2
+flask-sqlalchemy
+flask
+geoalchemy2
+sqlalchemy<=2.0
