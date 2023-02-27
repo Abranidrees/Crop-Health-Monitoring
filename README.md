@@ -40,11 +40,15 @@ Then, you have to run that line of code to in all teh libaraies which we need to
 Follow these steps to run the app.
 
 1. Give the path   for two geoJSON files of  same study area one in WSG84 Coordinate system (to search the images for that area )and other in projected Coordinate system (To clip the images) according to the UTM zone for that particular place.
+![Screenshot_20230227_093325](https://user-images.githubusercontent.com/126249551/221710873-44dcc57b-80de-4783-bfed-5d7df8de739f.png)
 2. Check the update the ending and starting date (This app currently is not working for offline images).
+![Screenshot_20230227_093431](https://user-images.githubusercontent.com/126249551/221710962-f1e7c223-e06c-4edd-804e-01c998372d4f.png)
 3. Ensure you have login credentials. If not register on Sentinel Hub to get that.Copy your credentials into the required python files.
+![Screenshot_20230227_093520](https://user-images.githubusercontent.com/126249551/221711286-f26d4d06-4741-4985-957a-2b30de52233a.png)
 4. Update the credentials  of the database and table in the required python files (main.py and app.py)
+![Screenshot_20230227_093557](https://user-images.githubusercontent.com/126249551/221711323-13981664-14ad-49a6-9718-082d6dd512d1.png)
 5. Run the "main.py"
-
+https://user-images.githubusercontent.com/126249551/221715012-e3bc0285-d61c-4dbc-bbb5-0dcc729ab074.mp4
 #### Working
 main.py file did these steps
 1. Create the folders in your C drive to put the downloaded images, Cliped images and processed Indices.
@@ -56,6 +60,7 @@ main.py file did these steps
 
 ## Database Connection
 Open the db.sql file in pgAdmin 4 (Crop-Health-Monitoring/database/) and run this file.
+![Screenshot_20230227_093724](https://user-images.githubusercontent.com/126249551/221711433-386f4be2-db3f-4523-b2ad-4cc2c12dbb29.png)
 
 Note: If you change the table name or database name, you have to change also in main.py
 #### Working
@@ -66,8 +71,10 @@ The downloaded, processed bands and indices are stored on the local Disk and can
 ### Visualization
 Follow these steps to visualized this web map
 1. Update the credentials of the database in app.py file(Crop-Health-Monitoring/App/app.py)
-2. Run the app.py file and open the localhost link.
+![Screenshot_20230227_093622](https://user-images.githubusercontent.com/126249551/221712098-6e2cc800-f5f9-48ea-8144-412d9e0df83d.png)
 
+2. Run the app.py file and open the localhost link.
+https://user-images.githubusercontent.com/126249551/221716299-a840608b-ab7c-4981-8698-b4d2ea7dfa14.mp4
 #### Working
 The web map interface functionalities include an attribute pop-up when clicking on the footprint polygon, a button to display attributes/metadata, and a quick URL to view the sentinel images.
 ## Future updates:
