@@ -1,5 +1,5 @@
--- Creates a database named "Ndvi_project"
-CREATE DATABASE "gps_tech"
+-- Creates a database named "GPS_project"
+CREATE DATABASE "tech"
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'
