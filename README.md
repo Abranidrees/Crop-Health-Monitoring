@@ -74,7 +74,14 @@ Follow these steps to visualized this web map
 ![Screenshot_20230227_093622](https://user-images.githubusercontent.com/126249551/221712098-6e2cc800-f5f9-48ea-8144-412d9e0df83d.png)
 
 2. Run the app.py file and open the localhost link.
+
+
+
 https://user-images.githubusercontent.com/126249551/221716299-a840608b-ab7c-4981-8698-b4d2ea7dfa14.mp4
+
+
+
+
 #### Working
 The web map interface functionalities include an attribute pop-up when clicking on the footprint polygon, a button to display attributes/metadata, and a quick URL to view the sentinel images.
 ## Future updates:
