@@ -48,7 +48,12 @@ Follow these steps to run the app.
 4. Update the credentials  of the database and table in the required python files (main.py and app.py)
 ![Screenshot_20230227_093557](https://user-images.githubusercontent.com/126249551/221711323-13981664-14ad-49a6-9718-082d6dd512d1.png)
 5. Run the "main.py"
+
+
 https://user-images.githubusercontent.com/126249551/221715012-e3bc0285-d61c-4dbc-bbb5-0dcc729ab074.mp4
+
+
+
 #### Working
 main.py file did these steps
 1. Create the folders in your C drive to put the downloaded images, Cliped images and processed Indices.
