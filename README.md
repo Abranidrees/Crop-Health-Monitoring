@@ -35,6 +35,8 @@ Then, you have to run that line of code to in all teh libaraies which we need to
 ```bash
   conda install --file requirements.txt -c conda-forge
 ```
+## Workflow
+![workflow](https://user-images.githubusercontent.com/126249551/221827646-7279fe58-5d30-495e-8678-3928c9a5f6f6.jpg)
 
 ## How to run the APP
 Follow these steps to run the app.
