@@ -103,13 +103,13 @@ We will update this web app
 Web visualization of multi-temporal indices line plot.
 It is pertinent to state that this app is developed for educational and research purposes. Future updates will be made if it will be suitable for commercial purposes
 ## Authors
-1. Abran Idrees
+1. Abran Idrees :
 He earned a bachelor's degree in Space Science from the university of the Punjab, Lahore, Pakistan and now he is pursuing a master's degree in Geospatial Technologies at NOVA IMS, Universidade NOVA de Lisboa, Portugal.
 
-2. Joao Maria Telo Abreu Jardine Neto
+2. Joao Maria Telo Abreu Jardine Neto :
 He earned a bachelor's degree in Spatial Planning from Instituto de Geografia e Ordenamento do Território, Portugal and now he is also pursuing a master's degree in Geospatial Technologies at NOVA IMS, Universidade NOVA de Lisboa, Portugal.
 
-3. Lukumon Olaitan Lateef
+3. Lukumon Olaitan Lateef :
 He holds a bachelor’s degree in surveying and geoinformatics from the Federal University of Technology, Akure in Nigeria and now he is also pursuing a master's degree in Geospatial Technologies at NOVA IMS, Universidade NOVA de Lisboa, Portugal.
 
 ## References
