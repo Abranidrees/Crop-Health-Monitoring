@@ -68,7 +68,8 @@ main.py file did these steps
 
 ## Database Connection
 Open the db.sql file in pgAdmin 4 (Crop-Health-Monitoring/database/) and run this file.
-![Screenshot_20230227_093724](https://user-images.githubusercontent.com/126249551/221711433-386f4be2-db3f-4523-b2ad-4cc2c12dbb29.png)
+![Screenshot_20230228_105104](https://user-images.githubusercontent.com/126249551/221832963-0b0cc2d0-9b9e-430c-bae2-bafbf1e3ca43.png)
+
 
 Note: If you change the table name or database name, you have to change also in main.py
 #### Working
